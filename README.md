@@ -1,5 +1,5 @@
 # boot-ui
-spring boot, data jpa, thymeleaf dan bootstrap
+spring boot, data jpa, thymeleaf dan bootstrap (+ contoh carousel)
 
 # Clone :
 git clone https://github.com/saifiahmada/boot-ui

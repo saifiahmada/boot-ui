@@ -42,6 +42,11 @@ public class IndexController {
 		return "index";
 	}
 	
+	@RequestMapping(value="/carousel" , method = RequestMethod.GET)
+	public String carousel(){
+		return "carousel";
+	}
+	
 	
 
 }
