@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title></title>
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.2.0/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
+</head>
+
+<body>
+
+	<div th:include="header :: header"></div>
+	<br />
+	<br />
+	<div class="container">
+		<h1>Master Customer</h1>
+		<br />
+		<div th:if="${message != null}" class="alert alert-success">
+			<p th:text="${message}">Sukses</p>
+		</div>
+		<form action="#" th:object="${customer}" th:action="@{/save.html}"
+			method="post" class="form-horizontal">
+			<div class="form-group">
+				<label for="name" class="col-sm-2 control-label">Name:</label>
+				<div class="col-sm-5">
+					<input type="text" th:field="*{name}" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="address" class="col-sm-2 control-label">Address:</label>
+				<div class="col-sm-5">
+					<input type="text" th:field="*{address}" class="form-control" />
+				</div>
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+
+		<table class="table table-bordered table-hover table-striped"> 
+			<tr>
+				<th>Nama</th>
+				<th>Address</th>
+			</tr>
+			<tr th:each="c : ${customers}">
+				<td th:text="${c.name}">name</td>
+				<td th:text="${c.address}">address</td>
+			</tr>
+		</table>
+
+
+	</div>
+	<div th:include="footer :: footer"></div>
+</body>
+
+</html>
